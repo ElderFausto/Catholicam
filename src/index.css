@@ -130,3 +130,9 @@ button[disabled] {
   padding: 5px;
   border-radius: 5px;
 }
+
+.loading {
+  text-align: center;
+  justify-content: center;
+}
+
