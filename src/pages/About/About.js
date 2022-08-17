@@ -17,7 +17,7 @@ const About = () => {
         Pedro (o Papa ou vigário de Cristo). Encontram-se em comunhão com a
         Igreja católica os batizados que estão unidos com Cristo no Seu corpo
         visível pelos vínculos da fé, dos sacramentos e da disciplina
-        eclesiástica. As Igrejas Católicas Orientais são Igrejas particulares
+        eclesiástica. Existem também Igrejas Católicas Orientais, são Igrejas particulares
         (sui iuris) em plena comunhão com o Papa, fazendo por isso parte da
         Igreja Católica. Em número de 23, elas conservam as seculares tradições
         litúrgicas e devocionais das várias igrejas orientais com as quais estão
@@ -27,7 +27,7 @@ const About = () => {
         (sucessão apostólica), o Papa é o legítimo detentor da suprema
         autoridade hierárquica da Igreja.
       </p>
-      <a href="https://www.vatican.va/content/vatican/pt.html">Documenta Latina</a>
+      <a href="https://www.vatican.va/content/vatican/pt.html">Documenta Latina📜</a>
     </div>
   );
 };

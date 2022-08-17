@@ -24,7 +24,12 @@ body {
 input::placeholder,
 textarea::placeholder {
   font-family: "MedievalSharp", cursive;
-  color: rgb(35, 35, 35);
+  color: #e2cccc;
+  font-size: 1.2em;
+}
+
+input {
+  font-size: 1em;
 }
 
 input:focus,
@@ -32,21 +37,31 @@ textarea:focus {
   outline: none;
 }
 
+a.a_home {
+  background-color: #a52a2a;
+  border-radius: 23px;
+}
+
+a.a_home:hover {
+  color: #ffd700;
+}
+
 a,
 nav button {
   text-decoration: none;
   background-color: transparent;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   transition: 0.4s;
   font-size: 1.1em;
   cursor: pointer;
   font-family: "MedievalSharp", cursive;
+  font-weight: bold;
 }
 
 a:hover,
 nav button:hover {
-  color: #636363;
+  color: #ffd700;
 }
 
 /* forms */
@@ -81,7 +96,7 @@ textarea {
 
 .btn {
   margin-top: 10px;
-  background-color: #ed3939;
+  background-color: #a52a2a;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -92,18 +107,23 @@ textarea {
   padding: 8px 15px;
   font-size: 1em;
   font-family: "MedievalSharp", cursive;
+  border-radius: 23px;
 }
 
 .btn.btn-dark {
-  background-color: #000;
-  border-radius: 0;
+  padding: 1px;
+  background-color: #799afc;
+}
+
+.btn.btn-dark:hover {
+  background-color: #799afc;
 }
 
 .btn.btn-outline {
   background-color: transparent;
-  border-radius: 0;
   color: #000;
-  border: 1px solid #000;
+  border: 1px solid #000000;
+  border-radius: 0px;
 }
 
 .btn:hover {
@@ -112,7 +132,7 @@ textarea {
 }
 
 .btn.btn-outline:hover {
-  background-color: #000;
+  background-color: #a52a2a;
 }
 
 .btn.btn danger:hover {
@@ -134,5 +154,11 @@ button[disabled] {
 .loading {
   text-align: center;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 

@@ -19,7 +19,7 @@ const Navbar = () => {
             to="/"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
-            Donum
+            Donum 🏠
           </NavLink>
         </li>
         {!user && (
@@ -49,7 +49,7 @@ const Navbar = () => {
               to="/posts/create"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Periodicum
+              Periodicum 📜
             </NavLink>
           </li>
           <li>
@@ -57,7 +57,7 @@ const Navbar = () => {
               to="/dashboard"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Quadratorum
+              Quadratorum 💻
             </NavLink>
           </li>
         </>
@@ -67,12 +67,12 @@ const Navbar = () => {
             to="/about"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
-            De nobis
+            De nobis ⛪
           </NavLink>
         </li>
         {user && (
           <li>
-            <button onClick={logout}>Exite</button>
+            <button onClick={logout}>Exite ➡️</button>
           </li>
         )}
       </ul>
