@@ -64,7 +64,7 @@ const CreatePost = () => {
             type="text"
             name="title"
             required
-            placeholder="Quid novi ?"
+            placeholder="Scribere titulum..."
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
@@ -83,6 +83,8 @@ const CreatePost = () => {
         <label>
           <span>Textus: </span>
           <textarea
+            rows={5}
+            cols={8}
             name="body"
             required
             placeholder="Insere textus"

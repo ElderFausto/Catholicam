@@ -15,7 +15,7 @@
 
 .search_form input {
   margin-right: 10px;
-  width: 50%;
+  width: 30%;
 }
 
 .noposts {
@@ -29,4 +29,6 @@
 .noposts a {
   padding: 0.4em;
 }
+
+
 

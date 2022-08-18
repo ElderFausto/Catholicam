@@ -13,6 +13,10 @@ select:-webkit-autofill:focus {
   border-bottom: 1px solid #ffffff;
 }
 
+* {
+  font-family: "MedievalSharp", cursive;
+}
+
 body {
   background-color: #799afc;
   padding: 0;
@@ -120,10 +124,32 @@ textarea {
 }
 
 .btn.btn-outline {
-  background-color: transparent;
-  color: #000;
-  border: 1px solid #000000;
-  border-radius: 0px;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  font-family: "MedievalSharp", cursive;
+}
+.btn.btn-outline:hover {
+  background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+  color: rgb(137, 172, 212);
+  font-family: "MedievalSharp", cursive;
+}
+
+.btn.btn-outline:active {
+  position:relative;
+	top:1px;
 }
 
 .btn:hover {
@@ -131,13 +157,13 @@ textarea {
   color: #fff;
 }
 
-.btn.btn-outline:hover {
-  background-color: #a52a2a;
+
+
+.btn.btn danger {
+  background-color: red;
+  font-family: "MedievalSharp", cursive;
 }
 
-.btn.btn danger:hover {
-  background-color: #dc3545;
-}
 
 button[disabled] {
   background-color: #aaa;
@@ -161,4 +187,32 @@ button[disabled] {
   flex-direction: column;
   min-height: 100vh;
 }
+
+button.btn.btn-outline.btn-danger {
+  box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #f02828 5%, #fa5252 100%);
+	background-color:#dfbdfa;
+	border-radius:6px;
+	border:1px solid #c584f3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9752cc;
+  font-family: "MedievalSharp", cursive;
+}
+
+button.btn.btn-outline.btn-danger:hover {
+  background:linear-gradient(to bottom, #ee1010 5%, #ce2929 100%);
+	background-color:#bc80ea;
+}
+
+h1 {
+  color: gold;
+}
+
 

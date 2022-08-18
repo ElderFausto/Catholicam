@@ -33,9 +33,12 @@ const Home = () => {
         />
         <button className="btn btn-dark">🔍</button>
       </form>
-      <div>
+      <div className="container-home">
         {loading && <p>Spes...</p>}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
+        {posts &&
+          posts.map((post) => (
+            <PostDetail key={post.id} post={post} />
+          ))}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Non possum invenire descriptionem...</p>
