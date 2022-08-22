@@ -27,20 +27,20 @@ const Register = () => {
       return;
     }
 
-    const res = await createUser(user)
+    const res = await createUser(user);
 
     console.log(res);
   };
 
   useEffect(() => {
-    if(authError) {
-      setError(authError)
+    if (authError) {
+      setError(authError);
     }
-  }, [authError])
+  }, [authError]);
 
   return (
     <div className={styles.register}>
-      <h1>Registration</h1>
+      <h1>Crea rationem</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Nomen: </span>
@@ -87,7 +87,11 @@ const Register = () => {
           />
         </label>
         {!loading && <button className="btn">Confirmat</button>}
-        {loading && <button className="btn" disabled>Spes...</button>}
+        {loading && (
+          <button className="btn" disabled>
+            Spes...
+          </button>
+        )}
         {error && <p className="error">{error}</p>}
       </form>
     </div>
