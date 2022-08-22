@@ -17,14 +17,14 @@
 
 .about a {
   display: block;
-  background-color: brown;
+  background-color: gold;
   color: black;
   border-radius: 23px;
   padding: 0.4em;
   font-size: 1.1em;
-  color: #fff;
+  color: #000;
 }
 
 .about a:hover {
-  color: gold;
+  color: #fff;
 }
