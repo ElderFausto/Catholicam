@@ -10,7 +10,7 @@
   <li>CSS</li>
   <li>JavaScript</li>
   <li>ReactJS</li>
-  <li>FireBase</li>
+  <li>Firebase</li>
   <li>Node.js</li>
 </ul>
 
