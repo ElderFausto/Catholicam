@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/85243693/215607391-97494350-39fb-4c81-85a9-098f56d9600c.png"/>
 
 <h2>Description 📜</h2>
-<p>The Catholicam project is a web application that aims to provide resources and information about the Catholic Church. The application includes sections on history, doctrine, liturgy, devotions and more.</p>
+<p>The Catholicam project is a web application that aims to provide resources and information about the Catholic Church. The application includes sections on history, doctrine, liturgy, devotions and more. On the site, it is possible to create, read, edit, and delete posts. The project was integrated with the Firebase database.</p>
 
 <h2>Used Technologies 🛠️</h2>
 <ul>
