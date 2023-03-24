@@ -11,7 +11,6 @@
   <li>JavaScript</li>
   <li>ReactJS</li>
   <li>Firebase</li>
-  <li>Node.js</li>
 </ul>
 
 <h2>Installation Instructions 📎</h2>
