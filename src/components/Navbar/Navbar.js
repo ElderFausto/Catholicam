@@ -18,7 +18,6 @@ const Navbar = () => {
             to="/"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
-            {/* Alterado de "Donum ⛪" */}
             Início
           </NavLink>
         </li>
@@ -29,7 +28,6 @@ const Navbar = () => {
                 to="/login"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                {/* Alterado de "Intrare ⚜️" */}
                 Entrar
               </NavLink>
             </li>
@@ -38,7 +36,6 @@ const Navbar = () => {
                 to="/register"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                {/* Alterado de "Creare 📝" */}
                 Registrar
               </NavLink>
             </li>
@@ -51,7 +48,6 @@ const Navbar = () => {
               to="/posts/create"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              {/* Alterado de "Periodicum 📜" */}
               Novo Post
             </NavLink>
           </li>
@@ -60,7 +56,6 @@ const Navbar = () => {
               to="/dashboard"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              {/* Alterado de "Quadratorum 🖼️" */}
               Dashboard
             </NavLink>
           </li>
@@ -71,13 +66,11 @@ const Navbar = () => {
             to="/about"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
-            {/* Alterado de "De nobis ⚔️" */}
             Sobre
           </NavLink>
         </li>
         {user && (
           <li>
-            {/* Alterado de "Exite ➡️" */}
             <button onClick={logout}>Sair</button>
           </li>
         )}

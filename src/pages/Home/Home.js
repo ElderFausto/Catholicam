@@ -24,19 +24,17 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* Alterado de "Periodicis" */}
       <h1>Postagens</h1>
       <form onSubmit={handleSubmit} className={styles.search_form}>
         <input
           type="text"
-          // Alterado de "Quaerere per notam..."
           placeholder="Buscar por tags..."
           onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn btn-dark">🔍</button>
       </form>
-      <div className="container-home">
-        {/* Alterado de "Spes..." */}
+      
+      <div className={styles.container_home}>
         {loading && <p>Carregando...</p>}
         {posts &&
           posts.map((post) => (
@@ -44,10 +42,8 @@ const Home = () => {
           ))}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
-            {/* Alterado de "Non possum invenire descriptionem..." */}
             <p>Não foram encontradas postagens...</p>
             <Link to="/posts/create" className="a_home">
-              {/* Alterado de "Creo periodicus" */}
               Criar postagem📜
             </Link>
           </div>
