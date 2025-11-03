@@ -1,32 +1,58 @@
+/* O container principal da barra de navegação */
 .navbar {
   display: flex;
-  box-shadow: -2px 1px 17px 7px rgba(142, 142, 142, 0.42);
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 2em;
+  padding: 1rem 2rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .brand {
-  font-size: 1.3em;
+  font-size: 1.5rem; 
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex; 
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.brand span {
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
+/* A lista <ul> que segura os links */
 .links_list {
   display: flex;
   list-style: none;
-  margin-right: 1em;
+  align-items: center;
+  gap: 1.5rem; 
+  margin: 0;
+  padding: 0;
 }
 
 .links_list li a {
-  padding: 0.4em 0.6em;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 .active {
-  background-color: gold;
-  color: rgb(0, 0, 0);
-  border-radius: 23px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.links_list li button {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #799afc; 
+  font-family: inherit; 
+  font-weight: 700;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.links_list li button:hover {
+  background-color: #ffffff;
+  color: #799afc; 
 }

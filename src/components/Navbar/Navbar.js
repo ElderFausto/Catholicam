@@ -10,8 +10,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
-        Catholicam Apostolicam <span>Ecclesiam </span>
-        <img src="cidade-do-vaticano.png" width={30} height={30} />
+        Catholicam
       </NavLink>
       <ul className={styles.links_list}>
         <li>
@@ -19,7 +18,8 @@ const Navbar = () => {
             to="/"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
-            Donum ⛪
+            {/* Alterado de "Donum ⛪" */}
+            Início
           </NavLink>
         </li>
         {!user && (
@@ -29,7 +29,8 @@ const Navbar = () => {
                 to="/login"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Intrare ⚜️
+                {/* Alterado de "Intrare ⚜️" */}
+                Entrar
               </NavLink>
             </li>
             <li>
@@ -37,7 +38,8 @@ const Navbar = () => {
                 to="/register"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Creare 📝
+                {/* Alterado de "Creare 📝" */}
+                Registrar
               </NavLink>
             </li>
           </>
@@ -49,7 +51,8 @@ const Navbar = () => {
               to="/posts/create"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Periodicum 📜
+              {/* Alterado de "Periodicum 📜" */}
+              Novo Post
             </NavLink>
           </li>
           <li>
@@ -57,7 +60,8 @@ const Navbar = () => {
               to="/dashboard"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Quadratorum 🖼️
+              {/* Alterado de "Quadratorum 🖼️" */}
+              Dashboard
             </NavLink>
           </li>
         </>
@@ -67,12 +71,14 @@ const Navbar = () => {
             to="/about"
             className={({ isActive }) => (isActive ? styles.active : "")}
           >
-            De nobis ⚔️
+            {/* Alterado de "De nobis ⚔️" */}
+            Sobre
           </NavLink>
         </li>
         {user && (
           <li>
-            <button onClick={logout}>Exite ➡️</button>
+            {/* Alterado de "Exite ➡️" */}
+            <button onClick={logout}>Sair</button>
           </li>
         )}
       </ul>

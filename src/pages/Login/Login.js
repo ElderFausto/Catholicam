@@ -34,26 +34,31 @@ const Login = () => {
 
   return (
     <div className={styles.login}>
-      <h1>Intrare</h1>
+      {/* Alterado de "Intrare" */}
+      <h1>Entrar</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Epistularum tuum: </span>
+          {/* Alterado de "Epistularum tuum:" */}
+          <span>Seu e-mail: </span>
           <input
             type="email"
             name="email"
             required
-            placeholder="Epistularum@tuum"
+            // Alterado de "Epistularum@tuum"
+            placeholder="Seu e-mail"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
         </label>
         <label>
-          <span>Secreto: </span>
+          {/* Alterado de "Secreto:" */}
+          <span>Senha: </span>
           <input
             type="password"
             name="password"
             required
-            placeholder="Secreto tuum*"
+            // Alterado de "Secreto tuum*"
+            placeholder="Sua senha*"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
