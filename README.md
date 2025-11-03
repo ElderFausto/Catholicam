@@ -1,4 +1,4 @@
-# Catholicam - Um blog Católico
+# ⛪ Catholicam - Um blog Católico
 
 ![Licença MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Tecnologia](https://img.shields.io/badge/React-22-61DAFB?logo=react)
