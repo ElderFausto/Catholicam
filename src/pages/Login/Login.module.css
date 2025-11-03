@@ -1,3 +1,57 @@
+/* O container da página inteira */
 .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o formulário na tela */
+  justify-content: center;
+  padding: 4rem 1rem; /* Mais espaço no topo/lados */
+}
+
+/* O container que segura o formulário */
+.form_container {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  
+  padding: 0; /* Removemos o padding do card */
+  
+  width: 100%;
+  max-width: 400px; /* Largura máxima para um formulário de login */
+}
+
+/* Título */
+.form_container h1 {
+  font-family: var(--font-main);
   text-align: center;
+  margin: 0;
+  margin-bottom: 2rem; /* Mais espaço abaixo do título */
+  
+  color: var(--color-text); 
+  font-size: 2.5rem; /* Título maior */
+}
+
+/* Formulário */
+.form_container form {
+  width: 100%;
+  max-width: 100%; 
+  margin: 0;
+}
+
+/* Botão "Entrar" */
+.form_container form .btn {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+}
+
+/* Estilo de erro (já usa as variáveis globais --color-error-*) */
+.error {
+  color: var(--color-error-text);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-text);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
 }

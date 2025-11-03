@@ -8,13 +8,12 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(""); // Alterado para string vazia
   const [formError, setFormError] = useState("");
 
   const {user} = useAuthValue()
   const {insertDocument, response} = useInsertDocument('posts')
   const navigate = useNavigate()
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,21 +23,18 @@ const CreatePost = () => {
     try {
       new URL(image);
     } catch (error) {
-      setFormError('Oportet esse URL!')
+      setFormError('A imagem precisa ser uma URL válida.')
     }
 
-
     //criar o array de tags
-
     const tagsArray = tags.split(',').map((tag)=> tag.trim().toLowerCase());
 
     //checar todos os valores
     if(!title || !image || !tags || !body){
-      setFormError('Imple omnia!')
+      setFormError('Por favor, preencha todos os campos.')
     }
 
     if (formError) return;
-
 
     insertDocument({
       title,
@@ -51,63 +47,65 @@ const CreatePost = () => {
 
     //redirect to home page
     navigate('/')
-
   };
 
   return (
     <div className={styles.create_post}>
-      <h2>Articulus</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Titulus: </span>
-          <input
-            type="text"
-            name="title"
-            required
-            placeholder="Scribere titulum..."
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-        </label>
-        <label>
-          <span>URL Imaginem: </span>
-          <input
-            type="text"
-            name="imagem"
-            required
-            placeholder="Imaginem"
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-          />
-        </label>
-        <label>
-          <span>Textus: </span>
-          <textarea
-            rows={5}
-            cols={8}
-            name="body"
-            required
-            placeholder="Insere textus"
-            onChange={(e) => setBody(e.target.value)}
-            value={body}
-          ></textarea>
-        </label>
-        <label>
-          <span>Notam: </span>
-          <input
-            type="text"
-            name="tags"
-            required
-            placeholder="Inserere notam"
-            onChange={(e) => setTags(e.target.value)}
-            value={tags}
-          />
-        </label>
-        {!response.loading && <button className="btn">Confirmat</button>}
-        {response.loading && <button className="btn" disabled>Spes...</button>}
-        {response.error && <p className="error">{response.error}</p>}
-        {formError && <p className="error">{formError}</p>}
-      </form>
+      {/* Container do "Card" */}
+      <div className={styles.form_container}>
+        <h2>Criar nova postagem</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <span>Título: </span>
+            <input
+              type="text"
+              name="title"
+              required
+              placeholder="Escreva um título..."
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+          </label>
+          <label>
+            <span>URL da Imagem: </span>
+            <input
+              type="text"
+              name="imagem"
+              required
+              placeholder="Cole a URL da imagem"
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
+            />
+          </label>
+          <label>
+            <span>Conteúdo: </span>
+            <textarea
+              rows={5}
+              cols={8}
+              name="body"
+              required
+              placeholder="Escreva o conteúdo do post..."
+              onChange={(e) => setBody(e.target.value)}
+              value={body}
+            ></textarea>
+          </label>
+          <label>
+            <span>Tags: </span>
+            <input
+              type="text"
+              name="tags"
+              required
+              placeholder="Insira as tags separadas por vírgula"
+              onChange={(e) => setTags(e.target.value)}
+              value={tags}
+            />
+          </label>
+          {!response.loading && <button className="btn">Criar Post</button>}
+          {response.loading && <button className="btn" disabled>Aguarde...</button>}
+          {response.error && <p className={styles.error}>{response.error}</p>}
+          {formError && <p className={styles.error}>{formError}</p>}
+        </form>
+      </div>
     </div>
   );
 };

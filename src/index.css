@@ -1,105 +1,96 @@
+/* PASSO 1: Definir a nova paleta "Profissional / Apple" */
 :root {
   --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Nova Paleta de Cores (Estilo Apple) */
+  --color-background: #FFFFFF;     /* Fundo branco puro */
+  --color-text: #1d1d1f;         /* Preto (o preto oficial da Apple) */
+  --color-text-light: #6e6e73;   /* Cinza secundário (o cinza da Apple) */
+  --color-accent: #0071e3;        /* Azul (o azul de links da Apple) */
+  --color-accent-hover: #0077ed;   /* Azul mais claro para hover */
+  --color-border: #d2d2d7;      /* Cinza de borda (o cinza da Apple) */
+  --color-error-text: #BF0A30;    /* Vermelho para erros */
+  --color-error-bg: #FDE8EC;      /* Fundo rosa claro para erros */
 }
 
-/* PASSO 3: Aplicar a fonte principal */
-
+/* PASSO 2: Aplicar a nova base no Body */
 body {
-  background-color: #799afc;
+  background-color: var(--color-background);
+  color: var(--color-text);
   padding: 0;
   margin: 0;
-  font-family: var(--font-main); /* Aplicado para todo o site */
-  color: white;
-  -webkit-font-smoothing: antialiased; /* Deixa a fonte mais suave em alguns navegadores */
-  -moz-osx-font-smoothing: grayscale; /* Deixa a fonte mais suave em alguns navegadores */
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Títulos usarão a mesma fonte, mas em negrito (como a Apple faz) */
+/* Títulos usarão a cor de texto principal (preto), não a cor de destaque */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
-  font-weight: 700; /* Define os títulos como negrito */
+  font-weight: 700;
+  color: var(--color-text);
 }
 
+/* O 'h1' dourado agora será preto para um visual mais limpo */
 h1 {
-  color: gold;
+  color: var(--color-text);
 }
 
-/* --- ESTILO DE INPUTS --- */
+/* --- ESTILO DE INPUTS (Tema Claro) --- */
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: transparent;
-  -webkit-text-fill-color: #000000 !important;
-  -webkit-box-shadow: #799afc inset;
-  transition: background-color 5000s ease-in-out 0s;
-  border-bottom: 1px solid #ffffff;
+input,
+textarea {
+  box-sizing: border-box;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.8em;
+  background-color: var(--color-background);
+  font-family: var(--font-main);
+  color: var(--color-text);
+  width: 100%;
 }
 
 input::placeholder,
 textarea::placeholder {
-  font-family: var(--font-main); /* Fonte do sistema */
-  color: #e2cccc;
-  font-size: 1.2em;
-}
-
-input {
+  font-family: var(--font-main);
+  color: var(--color-text-light);
   font-size: 1em;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2); /* Sombra azul da Apple */
 }
 
-input,
-textarea {
-  box-sizing: border-box;
-  border: none;
-  padding: 0.8em 0;
-  border-bottom: 1px solid #fff;
-  background-color: transparent;
-  font-family: var(--font-main); /* Fonte do sistema */
-  color: white; 
+/* --- ESTILO DE LINKS (Tema Claro) --- */
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: 0.2s;
+  font-weight: 600;
 }
 
+a:hover {
+  color: var(--color-accent-hover);
+}
 
-/* --- ESTILO DE LINKS E NAVEGAÇÃO --- */
-
+/* Link especial da Home (agora usará o azul) */
 a.a_home {
-  background-color: #a52a2a;
+  background-color: var(--color-accent);
+  color: white;
   border-radius: 23px;
+  padding: 0.5em 1em;
 }
 
 a.a_home:hover {
-  color: #ffd700;
+  background-color: var(--color-accent-hover);
+  color: white;
 }
 
-a,
-nav button {
-  text-decoration: none;
-  background-color: transparent;
-  border: none;
-  color: #ffffff;
-  transition: 0.4s;
-  font-size: 1.1em;
-  cursor: pointer;
-  font-family: var(--font-main); /* Fonte do sistema */
-  font-weight: bold;
-}
-
-a:hover,
-nav button:hover {
-  color: #ffd700;
-}
-
-/* --- ESTILO DE FORMS --- */
-
+/* --- ESTILO DE FORMS (Global) --- */
 form {
   max-width: 40%;
   margin: 0 auto;
@@ -119,70 +110,61 @@ label span {
   text-align: left;
 }
 
+/* --- ESTILO DE BOTÕES (Estilo Apple) --- */
 
-/* --- ESTILO DE BOTÕES --- */
-
+/* Botão Primário (Azul) */
 .btn {
   margin-top: 10px;
-  background-color: #a52a2a;
+  background-color: var(--color-accent);
   color: white;
   text-align: center;
   cursor: pointer;
-  border-radius: 23px; 
+  border-radius: 8px;
   width: 120px;
   font-weight: bold;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 15px;
   font-size: 1em;
-  font-family: var(--font-main); /* Fonte do sistema */
-}
-
-.btn.btn-dark {
-  padding: 1px;
-  background-color: #799afc;
-}
-
-.btn.btn-dark:hover {
-  background-color: #799afc;
-}
-
-.btn.btn-outline {
-  box-shadow:inset 0px 1px 0px 0px #ffffff;
-  background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-  background-color:#ffffff;
-  border-radius:6px;
-  border:1px solid #dcdcdc;
-  display:inline-block;
-  cursor:pointer;
-  color:#666666;
-  font-family: var(--font-main); /* Fonte do sistema */
-  font-size:15px;
-  font-weight:bold;
-  padding:6px 7px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #ffffff;
-}
-.btn.btn-outline:hover {
-  background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  background-color:#f6f6f6;
-  color: rgb(137, 172, 212);
-  font-family: var(--font-main); /* Fonte do sistema */
-}
-
-.btn.btn-outline:active {
-  position:relative;
-  top:1px;
+  font-family: var(--font-main);
+  transition: background-color 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #0f730c;
+  background-color: var(--color-accent-hover);
   color: #fff;
 }
 
+/* Botão Secundário (cinza claro) */
+.btn.btn-dark {
+  background-color: #f5f5f7; /* Cinza claro da Apple */
+  color: var(--color-text);
+  border: none;
+  padding: 10px 15px;
+}
+.btn.btn-dark:hover {
+  background-color: #e5e5e5;
+}
 
+/* Botão Outline (este já é branco, vamos só ajustar as cores) */
+.btn.btn-outline {
+  background: var(--color-background);
+  color: var(--color-text);
+  border-color: var(--color-border);
+  font-family: var(--font-main);
+}
+.btn.btn-outline:hover {
+  background: #f5f5f7;
+  color: var(--color-accent);
+  border-color: var(--color-border);
+}
+
+/* Botão de Perigo */
 .btn.btn-danger {
-  background-color: red;
-  font-family: var(--font-main); /* Fonte do sistema */
+  background-color: #DC2626;
+  font-family: var(--font-main);
+}
+.btn.btn-danger:hover {
+  background-color: #B91C1C;
 }
 
 
@@ -190,14 +172,18 @@ button[disabled] {
   background-color: #aaa;
 }
 
-.container .error {
-  color: #000000;
-  background-color: #000000;
-  border: 1px solid #f5c6cb;
-  padding: 5px;
-  border-radius: 5px;
+/* --- ESTILO DE ERRO (Tema Claro) --- */
+.container .error,
+.error {
+  color: var(--color-error-text);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-text);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 1rem;
 }
 
+/* --- LAYOUTS GLOBAIS --- */
 .loading {
   text-align: center;
   justify-content: center;
@@ -207,26 +193,4 @@ button[disabled] {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-button.btn.btn-outline.btn-danger {
-  box-shadow:inset 0px 1px 0px 0px #efdcfb;
-  background:linear-gradient(to bottom, #f02828 5%, #fa5252 100%);
-  background-color:#dfbdfa;
-  border-radius:6px;
-  border:1px solid #c584f3;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family: var(--font-main); /* Fonte do sistema */
-  font-size:15px;
-  font-weight:bold;
-  padding:6px 24px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #9752cc;
-}
-
-button.btn.btn-outline.btn-danger:hover {
-  background:linear-gradient(to bottom, #ee1010 5%, #ce2929 100%);
-  background-color:#bc80ea;
 }

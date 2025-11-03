@@ -15,7 +15,7 @@ const EditPost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(""); // Alterado para string
   const [formError, setFormError] = useState("");
 
   // fill form data
@@ -48,60 +48,49 @@ const EditPost = () => {
       setFormError("A imagem precisa ser uma URL.");
     }
 
-    // create tags array
-    const tagsArray = tags.split(",").map((tag) => tag.trim());
-
-    console.log(tagsArray);
-
-    console.log({
-      title,
-      image,
-      body,
-      tags: tagsArray,
-    });
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
     const data = {
       title,
       image,
       body,
-      tags: tagsArray,
+      tagsArray,
     };
 
-    console.log(post);
-
     updateDocument(id, data);
-
-    // redirect to home page
     navigate("/dashboard");
   };
 
   return (
     <div className={styles.edit_post}>
       {post && (
-        <>
-          <h2>Ad edit: {post.title}</h2>
+        <div className={styles.form_container}>
+          <h2>Editando: {post.title}</h2>
           <form onSubmit={handleSubmit}>
             <label>
-              <span>Titulus: </span>
+              <span>Título: </span>
               <input
                 type="text"
                 name="text"
                 required
-                placeholder="Scribere titulum..."
+                placeholder="Escreva um título..."
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
               />
             </label>
             <label>
-              <span>URL Imaginem:</span>
+              <span>URL da Imagem:</span>
               <input
                 type="text"
                 name="image"
                 required
-                placeholder="Imaginem..."
+                placeholder="Cole a URL da imagem..."
                 onChange={(e) => setImage(e.target.value)}
                 value={image}
               />
+            </label>
+            <label>
+              <span>Prévia da imagem atual:</span>
             </label>
             <img
               className={styles.image_preview}
@@ -109,39 +98,39 @@ const EditPost = () => {
               alt={post.title}
             />
             <label>
-              <span>Textus: </span>
+              <span>Conteúdo: </span>
               <textarea
                 rows={8}
                 cols={60}
                 name="body"
                 required
-                placeholder="Insire textus..."
+                placeholder="Escreva o conteúdo do post..."
                 onChange={(e) => setBody(e.target.value)}
                 value={body}
               ></textarea>
             </label>
             <label>
-              <span>Notam:</span>
+              <span>Tags:</span>
               <input
                 type="text"
                 name="tags"
                 required
-                placeholder="Separata commatibus ','"
+                placeholder="Insira as tags separadas por vírgula"
                 onChange={(e) => setTags(e.target.value)}
                 value={tags}
               />
             </label>
-            {!response.loading && <button className="btn">Editar</button>}
+            {!response.loading && <button className="btn">Salvar Alterações</button>}
             {response.loading && (
               <button className="btn" disabled>
-                Aguarde.. .
+                Aguarde...
               </button>
             )}
             {(response.error || formError) && (
-              <p className="error">{response.error || formError}</p>
+              <p className={styles.error}>{response.error || formError}</p>
             )}
           </form>
-        </>
+        </div>
       )}
     </div>
   );

@@ -13,7 +13,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setError("");
 
     const user = {
@@ -23,12 +22,11 @@ const Register = () => {
     };
 
     if (password !== confirmPassword) {
-      setError("Secreto idem esse debet!");
+      setError("As senhas precisam ser iguais!");
       return;
     }
 
     const res = await createUser(user);
-
     console.log(res);
   };
 
@@ -40,60 +38,72 @@ const Register = () => {
 
   return (
     <div className={styles.register}>
-      <h1>Crea rationem</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Nomen: </span>
-          <input
-            type="text"
-            name="displayName"
-            required
-            placeholder="Nomen tuum"
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Epistularum tuum: </span>
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Epistularum@tuum"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Secreto: </span>
-          <input
-            type="password"
-            name="password"
-            required
-            placeholder="Secretum tuum *"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Confirmate: </span>
-          <input
-            type="password"
-            name="confirmPassword"
-            required
-            placeholder="Confirmatione secretum tuum *"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </label>
-        {!loading && <button className="btn">Confirmat</button>}
-        {loading && (
-          <button className="btn" disabled>
-            Spes...
-          </button>
-        )}
-        {error && <p className="error">{error}</p>}
-      </form>
+      <div className={styles.form_container}>
+        <h1>Criar conta</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+          
+            <span>Nome: </span>
+            <input
+              type="text"
+              name="displayName"
+              required
+          
+              placeholder="Seu nome"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+          </label>
+          <label>
+          
+            <span>E-mail: </span>
+            <input
+              type="email"
+              name="email"
+              required
+        
+              placeholder="Seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <label>
+          
+            <span>Senha: </span>
+            <input
+              type="password"
+              name="password"
+              required
+              // Traduzido de "Secretum tuum *"
+              placeholder="Sua senha *"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <label>
+            <span>Confirme sua senha: </span>
+            <input
+              type="password"
+              name="confirmPassword"
+              required
+              // Traduzido de "Confirmatione secretum tuum *"
+              placeholder="Confirme sua senha *"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </label>
+          {/* Traduzido de "Confirmat" */}
+          {!loading && <button className="btn">Cadastrar</button>}
+      
+          {loading && (
+            <button className="btn" disabled>
+              Aguarde...
+            </button>
+          )}
+          {/* CORREÇÃO: Usando styles.error para um visual melhor */}
+          {error && <p className={styles.error}>{error}</p>}
+        </form>
+      </div>
     </div>
   );
 };

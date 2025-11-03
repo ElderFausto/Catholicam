@@ -1,24 +1,29 @@
-/* O container principal da barra de navegação */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--color-background);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .brand {
   font-size: 1.5rem; 
   font-weight: 700;
-  color: #ffffff;
+  
+  color: var(--color-text);
+  
   text-decoration: none;
   display: flex; 
   align-items: center;
   gap: 0.5rem;
 }
 
-/* A lista <ul> que segura os links */
 .links_list {
   display: flex;
   list-style: none;
@@ -32,16 +37,26 @@
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   font-weight: 600;
+  
+  color: var(--color-text-light);
+  
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.links_list li a:hover {
+  color: var(--color-text);
 }
 
 .active {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  color: var(--color-accent);
+  
+  background-color: rgba(0, 113, 227, 0.05);
 }
 
 .links_list li button {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #799afc; 
+  background-color: var(--color-accent);
+  color: #FFFFFF; 
+  
   font-family: inherit; 
   font-weight: 700;
   font-size: 1.1em;
@@ -53,6 +68,6 @@
 }
 
 .links_list li button:hover {
-  background-color: #ffffff;
-  color: #799afc; 
+  background-color: var(--color-accent-hover);
+  color: #FFFFFF; 
 }

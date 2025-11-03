@@ -5,23 +5,40 @@
   padding: 1rem;
 }
 
+
 .search_form {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* Mais espaço abaixo da busca */
   width: 100%;
-  max-width: 600px;
+  max-width: 400px; /* Um campo de busca não precisa ser tão largo */
 }
 
 .search_form input {
-  flex: 1;
-  margin-right: 1rem;
+  /* Tamanho e forma */
+  width: 100%; /* Ocupa todo o espaço do form */
+  padding: 0.75rem 1rem 0.75rem 2.5rem; /* Padding esquerdo para o ícone */
+  border-radius: 20px; /* Forma de pílula */
+  font-size: 1rem;
+  
+  /* Cor (Estilo Apple) */
+  background-color: #f5f5f7; /* Cinza claro */
+  border: 1px solid #f5f5f7; /* Remove a borda padrão */
+  color: var(--color-text);
+  
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236e6e73' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+}
+
+.search_form input:focus {
+  background-color: #fff;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
 }
 
 .container_home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
@@ -30,6 +47,7 @@
 .noposts {
   text-align: center;
   padding: 2rem;
+  grid-column: 1 / -1;
 }
 
 .noposts p {

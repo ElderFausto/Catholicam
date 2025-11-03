@@ -37,7 +37,7 @@ function App() {
   }, [auth]);
 
   if (loadingUser) {
-    return <p className="loading">Spes...</p>;
+    return <p className="loading">Carregando...</p>;
   }
 
   return (

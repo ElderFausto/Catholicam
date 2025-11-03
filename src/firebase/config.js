@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// As chaves agora são lidas do "process.env"
 const firebaseConfig = {
-  apiKey: "AIzaSyC1hmTwv1ejtMp1gETx3kKRzrm2jBSSEVg",
-  authDomain: "miniblog-13365.firebaseapp.com",
-  projectId: "miniblog-13365",
-  storageBucket: "miniblog-13365.appspot.com",
-  messagingSenderId: "325938454973",
-  appId: "1:325938454973:web:b4dabc73d0e26ff69b32d4",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

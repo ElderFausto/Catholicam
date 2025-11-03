@@ -14,9 +14,8 @@ export const useAuthentication = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
 
-  //cleanUp
-  //deal with memory leak
-
+  // limpeza
+  // lida com vazamento de memória
   const [cancelled, setCancelled] = useState(false);
 
   const auth = getAuth();
@@ -27,6 +26,7 @@ export const useAuthentication = () => {
     }
   }
 
+  // Hook de Criar Usuário
   const createUser = async (data) => {
     checkIfIsCancelled();
 
@@ -54,11 +54,14 @@ export const useAuthentication = () => {
       let systemErrorMessage;
 
       if (error.message.includes("Password")) {
-        systemErrorMessage = "Debilis secreto, VI characteres non requiritur.";
+        // Traduzido de: "Debilis secreto, VI characteres non requiritur."
+        systemErrorMessage = "A senha precisa ter pelo menos 6 caracteres.";
       } else if (error.message.includes("email-already")) {
-        systemErrorMessage = "Epistularum@ iam exstat.";
+        // Traduzido de: "Epistularum@ iam exstat."
+        systemErrorMessage = "Este e-mail já está cadastrado.";
       } else {
-        systemErrorMessage = "Error, postea experiri.";
+        // Traduzido de: "Error, postea experiri."
+        systemErrorMessage = "Ocorreu um erro, por favor, tente mais tarde.";
       }
 
       setLoading(false);
@@ -66,14 +69,14 @@ export const useAuthentication = () => {
     }
   };
 
+  // Hook de Logout
   const logout = () => {
     checkIfIsCancelled();
 
     signOut(auth);
   };
 
-  //login
-
+  // Hook de Login
   const login = async (data) => {
     checkIfIsCancelled();
 
@@ -87,11 +90,14 @@ export const useAuthentication = () => {
       let systemErrorMessage;
 
       if (error.message.includes("user-not-found")) {
-        systemErrorMessage = "Non existat!";
+        // Traduzido de: "Non existat!"
+        systemErrorMessage = "Usuário não encontrado.";
       } else if (error.message.includes("wrong-password")) {
-        systemErrorMessage = "Debilis secreto!";
+        // Traduzido de: "Debilis secreto!"
+        systemErrorMessage = "Senha incorreta.";
       } else {
-        systemErrorMessage = "Error, postea experiri.";
+        // Traduzido de: "Error, postea experiri."
+        systemErrorMessage = "Ocorreu um erro, por favor, tente mais tarde.";
       }
       setError(systemErrorMessage);
       setLoading(false);

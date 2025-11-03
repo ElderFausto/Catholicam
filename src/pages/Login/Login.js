@@ -34,43 +34,40 @@ const Login = () => {
 
   return (
     <div className={styles.login}>
-      {/* Alterado de "Intrare" */}
-      <h1>Entrar</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          {/* Alterado de "Epistularum tuum:" */}
-          <span>Seu e-mail: </span>
-          <input
-            type="email"
-            name="email"
-            required
-            // Alterado de "Epistularum@tuum"
-            placeholder="Seu e-mail"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </label>
-        <label>
-          {/* Alterado de "Secreto:" */}
-          <span>Senha: </span>
-          <input
-            type="password"
-            name="password"
-            required
-            // Alterado de "Secreto tuum*"
-            placeholder="Sua senha*"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </label>
-        {!loading && <button className="btn">Entrar</button>}
-        {loading && (
-          <button className="btn" disabled>
-            Aguarde...
-          </button>
-        )}
-        {error && <p className="error">{error}</p>}
-      </form>
+      <div className={styles.form_container}>
+        <h1>Entrar</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <span>Seu e-mail: </span>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Seu e-mail"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </label>
+          <label>
+            <span>Senha: </span>
+            <input
+              type="password"
+              name="password"
+              required
+              placeholder="Sua senha*"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </label>
+          {!loading && <button className="btn">Entrar</button>}
+          {loading && (
+            <button className="btn" disabled>
+              Aguarde...
+            </button>
+          )}
+          {error && <p className={styles.error}>{error}</p>}
+        </form>
+      </div>
     </div>
   );
 };

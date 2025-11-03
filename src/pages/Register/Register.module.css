@@ -1,4 +1,60 @@
+/* O container da página inteira */
 .register {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o formulário na tela */
+  justify-content: center;
+  padding: 4rem 1rem; /* Mais espaço (consistente com Login) */
 }
 
+/* O container que segura o formulário */
+.form_container {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  
+
+  padding: 0; 
+  
+  /* Tamanho do card */
+  width: 100%;
+  /* 500px é bom para um formulário de registro */
+  max-width: 500px; 
+}
+
+/* Título */
+.form_container h1 {
+  font-family: var(--font-main);
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2rem; /* (consistente com Login) */
+  
+  color: var(--color-text);
+  font-size: 2.5rem; /* (consistente com Login) */
+}
+
+/* Sobrescreve o CSS global do form... */
+.form_container form {
+  width: 100%;
+  max-width: 100%; 
+  margin: 0;
+}
+
+/* Faz o botão de "Cadastrar" ocupar 100% da largura */
+.form_container form .btn {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+}
+
+/* Novo estilo de erro (usando as variáveis globais) */
+.error {
+  color: var(--color-error-text); 
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-text);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+}

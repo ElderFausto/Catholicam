@@ -31,7 +31,6 @@ const Home = () => {
           placeholder="Buscar por tags..."
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="btn btn-dark">🔍</button>
       </form>
       
       <div className={styles.container_home}>

@@ -10,13 +10,14 @@ const Post = () => {
 
   return (
     <div className={styles.post_container}>
-      {loading && <p>Spes...</p>}
+      {loading && <p className={styles.loading}>Carregando...</p>}
       {post && (
         <>
           <h1>{post.title}</h1>
           <img src={post.image} alt={post.title} />
-          <p>{post.body}</p>
-          <h3>Notam: </h3>
+          <p className={styles.body}>{post.body}</p>
+          
+          <h3>Tags:</h3>
           <div className={styles.tags}>
             {post.tagsArray.map((tag) => (
               <p key={tag}>
